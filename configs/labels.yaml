@@ -1,0 +1,85 @@
+# Label mapping: Edge-IIoTset (our RF output) -> base paper Table I (arXiv 2511.06212).
+# Paper Table I has 5 categories and 13 attack types. Ransomware is not listed in it.
+#
+# status values:
+#   direct           = same attack in both, name matches the paper
+#   inferred         = our reading of the correspondence, not confirmed by the paper
+#   no_paper_mapping = class exists in our dataset but not in the paper's Table I
+
+dataset: edgeiiotset_scenarios_v1_ml_ready
+
+labels:
+  Normal:
+    paper_name: Benign          # "Benign" is our wording, not seen as a Table I entry
+    paper_category: null
+    status: inferred
+
+  Backdoor:
+    paper_name: Backdoor
+    paper_category: Malware
+    status: direct
+
+  Password:
+    paper_name: Password Cracking / Dictionary Brute Force
+    paper_category: Malware
+    status: inferred
+
+  DDoS_HTTP:
+    paper_name: HTTP Flood
+    paper_category: DDoS
+    status: direct
+
+  DDoS_ICMP:
+    paper_name: ICMP Flood
+    paper_category: DDoS
+    status: direct
+
+  DDoS_UDP:
+    paper_name: UDP Flood
+    paper_category: DDoS
+    status: direct
+
+  DDoS_TCP:
+    paper_name: TCP SYN Flood / TCP Flood / SYN Flood
+    paper_category: DDoS
+    status: inferred
+
+  MITM:
+    paper_name: MITM
+    paper_category: Spoofing
+    status: direct
+
+  OS_Fingerprinting:
+    paper_name: OS Fingerprinting / OS Scanning
+    paper_category: Reconnaissance
+    status: direct
+
+  Port_Scanning:
+    paper_name: Port Scanning
+    paper_category: Reconnaissance
+    status: direct
+
+  Vulnerability_scanner:
+    paper_name: Vulnerability Scanning
+    paper_category: Reconnaissance
+    status: direct
+
+  SQL_injection:
+    paper_name: SQL Injection
+    paper_category: Injection
+    status: direct
+
+  XSS:
+    paper_name: Cross-Site Scripting
+    paper_category: Injection
+    status: direct
+
+  Uploading:
+    paper_name: Uploading
+    paper_category: Injection
+    status: direct
+
+  Ransomware:
+    paper_name: null            # not listed in the paper's Table I
+    paper_category: null
+    status: no_paper_mapping

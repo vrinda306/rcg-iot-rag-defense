@@ -1,0 +1,32 @@
+[
+  {
+    "example": "1_correct_attack",
+    "row_id": "110112",
+    "true_label": "Mirai-greip_flood",
+    "predicted_label": "Mirai-greip_flood",
+    "confidence": 0.99,
+    "description": "A flood launched by devices infected with Mirai botnet malware, using GRE (Generic Routing Encapsulation) packets that carry IP packets inside. The target has to unwrap and handle each one, which wastes bandwidth and processing power. On the network it appears as a heavy stream of GRE traffic directed at a single target.",
+    "prompt": "You are helping a security analyst.\nA classifier looked at one network flow and predicted: Mirai-greip_flood (model confidence: 99.0%).\n\nDescription of this class from our knowledge base:\nA flood launched by devices infected with Mirai botnet malware, using GRE (Generic Routing Encapsulation) packets that carry IP packets inside. The target has to unwrap and handle each one, which wastes bandwidth and processing power. On the network it appears as a heavy stream of GRE traffic directed at a single target.\n\nWrite a short threat report for the analyst in 3 to 4 sentences. Use only the description above. Do not add facts,advice or recommendations that are not in it.",
+    "report": "The classifier identified the network flow as Mirai-greip_flood with 99.0% confidence. This attack involves devices infected with Mirai botnet malware sending GRE (Generic Routing Encapsulation) packets that carry IP packets inside. The heavy stream of GRE traffic directed at a single target wastes bandwidth and processing power as the target must unwrap and handle each packet."
+  },
+  {
+    "example": "2_benign",
+    "row_id": "206245",
+    "true_label": "BenignTraffic",
+    "predicted_label": "BenignTraffic",
+    "confidence": 0.97,
+    "description": "Normal, legitimate traffic produced by everyday device and user activity, such as web browsing, DNS lookups, media streaming and routine IoT device check-ins. It usually shows complete TCP handshakes, balanced request and response patterns, and moderate packet rates. It does not contain floods, scans or malicious payloads.",
+    "prompt": "You are helping a security analyst.\nA classifier looked at one network flow and predicted: BenignTraffic (model confidence: 97.0%).\n\nDescription of this class from our knowledge base:\nNormal, legitimate traffic produced by everyday device and user activity, such as web browsing, DNS lookups, media streaming and routine IoT device check-ins. It usually shows complete TCP handshakes, balanced request and response patterns, and moderate packet rates. It does not contain floods, scans or malicious payloads.\n\nWrite a short threat report for the analyst in 3 to 4 sentences. Use only the description above. Do not add facts,advice or recommendations that are not in it.",
+    "report": "The classifier identified the network flow as BenignTraffic with 97.0% confidence. This classification represents normal, legitimate activity such as web browsing, DNS lookups, media streaming, and routine IoT device check-ins. The traffic typically exhibits complete TCP handshakes, balanced request and response patterns, and moderate packet rates, without floods, scans, or malicious payloads."
+  },
+  {
+    "example": "3_wrong_prediction",
+    "row_id": "36761",
+    "true_label": "DNS_Spoofing",
+    "predicted_label": "BenignTraffic",
+    "confidence": 0.74,
+    "description": "Normal, legitimate traffic produced by everyday device and user activity, such as web browsing, DNS lookups, media streaming and routine IoT device check-ins. It usually shows complete TCP handshakes, balanced request and response patterns, and moderate packet rates. It does not contain floods, scans or malicious payloads.",
+    "prompt": "You are helping a security analyst.\nA classifier looked at one network flow and predicted: BenignTraffic (model confidence: 74.0%).\n\nDescription of this class from our knowledge base:\nNormal, legitimate traffic produced by everyday device and user activity, such as web browsing, DNS lookups, media streaming and routine IoT device check-ins. It usually shows complete TCP handshakes, balanced request and response patterns, and moderate packet rates. It does not contain floods, scans or malicious payloads.\n\nWrite a short threat report for the analyst in 3 to 4 sentences. Use only the description above. Do not add facts,advice or recommendations that are not in it.",
+    "report": "The classifier identified the network flow as BenignTraffic with 74.0% confidence. This classification represents normal, legitimate activity such as web browsing, DNS lookups, media streaming, and routine IoT device check-ins. The traffic typically exhibits complete TCP handshakes, balanced request and response patterns, and moderate packet rates, without floods, scans, or malicious payloads."
+  }
+]

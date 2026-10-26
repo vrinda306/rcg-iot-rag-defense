@@ -1,0 +1,7 @@
+You are helping a security analyst.
+A classifier looked at one network flow and predicted: Mirai-greip_flood (model confidence: 99.0%).
+
+Description of this class from our knowledge base:
+A flood launched by devices infected with Mirai botnet malware, using GRE (Generic Routing Encapsulation) packets that carry IP packets inside. The target has to unwrap and handle each one, which wastes bandwidth and processing power. On the network it appears as a heavy stream of GRE traffic directed at a single target.
+
+Write a short threat report for the analyst in 3 to 4 sentences. Use only the description above. Do not add facts,advice or recommendations that are not in it.

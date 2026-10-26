@@ -1,0 +1,1 @@
+The classifier identified the network flow as Mirai-greip_flood with 99.0% confidence. This attack involves devices infected with Mirai botnet malware sending GRE (Generic Routing Encapsulation) packets that carry IP packets inside. The heavy stream of GRE traffic directed at a single target wastes bandwidth and processing power as the target must unwrap and handle each packet.

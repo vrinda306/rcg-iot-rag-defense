@@ -1,1 +1,0 @@
-# rcg-iot-rag-defense

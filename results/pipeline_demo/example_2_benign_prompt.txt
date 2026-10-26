@@ -1,0 +1,7 @@
+You are helping a security analyst.
+A classifier looked at one network flow and predicted: BenignTraffic (model confidence: 97.0%).
+
+Description of this class from our knowledge base:
+Normal, legitimate traffic produced by everyday device and user activity, such as web browsing, DNS lookups, media streaming and routine IoT device check-ins. It usually shows complete TCP handshakes, balanced request and response patterns, and moderate packet rates. It does not contain floods, scans or malicious payloads.
+
+Write a short threat report for the analyst in 3 to 4 sentences. Use only the description above. Do not add facts,advice or recommendations that are not in it.

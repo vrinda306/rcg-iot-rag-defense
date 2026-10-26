@@ -1,0 +1,171 @@
+{
+  "data": "data\\processed\\sample_v1.parquet",
+  "seed": 42,
+  "tag": "v1",
+  "class_weight": "none",
+  "n_train": 289240,
+  "n_test": 72311,
+  "n_features": 33,
+  "features": [
+    "arp.opcode",
+    "arp.hw.size",
+    "icmp.seq_le",
+    "http.content_length",
+    "http.tls_port",
+    "tcp.ack",
+    "tcp.ack_raw",
+    "tcp.checksum",
+    "tcp.connection.fin",
+    "tcp.connection.rst",
+    "tcp.connection.syn",
+    "tcp.connection.synack",
+    "tcp.flags",
+    "tcp.flags.ack",
+    "tcp.len",
+    "tcp.seq",
+    "udp.stream",
+    "udp.time_delta",
+    "dns.qry.name.len",
+    "dns.qry.qu",
+    "dns.qry.type",
+    "dns.retransmission",
+    "dns.retransmit_request",
+    "dns.retransmit_request_in",
+    "mqtt.conflag.cleansess",
+    "mqtt.len",
+    "mqtt.msgtype",
+    "mqtt.proto_len",
+    "mqtt.topic_len",
+    "mqtt.ver",
+    "mbtcp.len",
+    "mbtcp.trans_id",
+    "mbtcp.unit_id"
+  ],
+  "excluded_constant_in_sample": [
+    "icmp.checksum",
+    "icmp.unused",
+    "mqtt.conflags",
+    "mqtt.hdrflags"
+  ],
+  "labels": [
+    "Backdoor",
+    "DDoS_HTTP",
+    "DDoS_ICMP",
+    "DDoS_TCP",
+    "DDoS_UDP",
+    "MITM",
+    "Normal",
+    "OS_Fingerprinting",
+    "Password",
+    "Port_Scanning",
+    "Ransomware",
+    "SQL_injection",
+    "Uploading",
+    "Vulnerability_scanner",
+    "XSS"
+  ],
+  "model_params": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "train_seconds": 6.96,
+  "multiclass": {
+    "accuracy": 0.9136645876837549,
+    "macro_precision": 0.851740645424104,
+    "macro_recall": 0.8523017207112695,
+    "macro_f1": 0.8519723021351254,
+    "weighted_f1": 0.9138308319356557
+  },
+  "binary_derived": {
+    "accuracy": 0.9477949412952387,
+    "precision": 0.9566716236312018,
+    "recall": 0.9582045090383877,
+    "f1": 0.9574374527865784,
+    "confusion_matrix_[[TN,FP],[FN,TP]]": [
+      [
+        26077,
+        1923
+      ],
+      [
+        1852,
+        42459
+      ]
+    ]
+  },
+  "train_test_overlap": {
+    "test_rows_with_feature_vector_seen_in_train": 24,
+    "fraction_of_test": 0.0003318997109706684,
+    "accuracy_on_seen_rows": 0.5416666666666666,
+    "accuracy_on_unseen_rows": 0.9137880946781579
+  },
+  "top_confusions": [
+    [
+      "Normal",
+      "SQL_injection",
+      526
+    ],
+    [
+      "Normal",
+      "Password",
+      521
+    ],
+    [
+      "Password",
+      "Normal",
+      511
+    ],
+    [
+      "SQL_injection",
+      "Normal",
+      461
+    ],
+    [
+      "Normal",
+      "Uploading",
+      391
+    ],
+    [
+      "Uploading",
+      "Normal",
+      356
+    ],
+    [
+      "Port_Scanning",
+      "Uploading",
+      355
+    ],
+    [
+      "Uploading",
+      "Port_Scanning",
+      322
+    ],
+    [
+      "XSS",
+      "Normal",
+      312
+    ],
+    [
+      "Normal",
+      "XSS",
+      280
+    ]
+  ],
+  "notes": "Trained on a class-capped sample, not the full dataset. Numeric features only. Random stratified split, so identical or conflicting feature vectors may appear in both train and test. Results do not represent full-dataset performance."
+}

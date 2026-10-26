@@ -1,0 +1,7 @@
+You are helping a security analyst.
+A classifier looked at one network flow and predicted: Normal (model confidence: 89.0%).
+
+Description of this class from our knowledge base:
+Ordinary, legitimate traffic from everyday operation of devices and applications, such as sensor readings, protocol messages between IoT components, web requests and DNS lookups. It generally shows regular communication patterns, complete connection handshakes and moderate traffic rates. It does not contain floods, scans or malicious payloads.
+
+Write a short threat report for the analyst in 3 to 4 sentences. Use only the description above. Do not add facts,advice or recommendations that are not in it.

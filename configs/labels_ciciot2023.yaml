@@ -1,0 +1,94 @@
+# Label mapping: CICIoT2023 (our RF output) -> base paper Table I (arXiv 2511.06212).
+# Same format and status values as labels.yaml (Edge-IIoTset).
+#   direct           = same attack in both, name matches the paper
+#   inferred         = our reading of the correspondence, not confirmed by the paper
+#   no_paper_mapping = class exists in CICIoT2023 but is not one of the 13 attack types in Table I
+# The RF still predicts all 34 raw classes. Nothing is merged here; this only records
+# which paper attack type each class corresponds to.
+
+dataset: ciciot2023_train_sample_v1
+
+labels:
+  BenignTraffic:
+    paper_name: Benign
+    paper_category: null
+    status: inferred
+
+  # --- Classes that map to a Table I attack type ---
+  Backdoor_Malware:
+    paper_name: Backdoor
+    paper_category: Malware
+    status: inferred
+  DictionaryBruteForce:
+    paper_name: Password Cracking / Dictionary Brute Force
+    paper_category: Malware
+    status: inferred
+  DDoS-HTTP_Flood:
+    paper_name: HTTP Flood
+    paper_category: DDoS
+    status: direct
+  DDoS-ICMP_Flood:
+    paper_name: ICMP Flood
+    paper_category: DDoS
+    status: direct
+  DDoS-UDP_Flood:
+    paper_name: UDP Flood
+    paper_category: DDoS
+    status: direct
+  DDoS-SYN_Flood:                 # many-to-one with DDoS-TCP_Flood: both map to the same paper entry
+    paper_name: TCP SYN Flood / TCP Flood / SYN Flood
+    paper_category: DDoS
+    status: inferred
+  DDoS-TCP_Flood:
+    paper_name: TCP SYN Flood / TCP Flood / SYN Flood
+    paper_category: DDoS
+    status: inferred
+  MITM-ArpSpoofing:               # ARP spoofing is a MITM technique, but the name differs
+    paper_name: MITM
+    paper_category: Spoofing
+    status: inferred
+  Recon-OSScan:
+    paper_name: OS Fingerprinting / OS Scanning
+    paper_category: Reconnaissance
+    status: direct
+  Recon-PortScan:
+    paper_name: Port Scanning
+    paper_category: Reconnaissance
+    status: direct
+  VulnerabilityScan:
+    paper_name: Vulnerability Scanning
+    paper_category: Reconnaissance
+    status: direct
+  SqlInjection:
+    paper_name: SQL Injection
+    paper_category: Injection
+    status: direct
+  XSS:
+    paper_name: Cross-Site Scripting
+    paper_category: Injection
+    status: direct
+  Uploading_Attack:
+    paper_name: Uploading
+    paper_category: Injection
+    status: direct
+
+  # --- Classes with no Table I attack type (kept as their own classes) ---
+  DDoS-PSHACK_Flood:        {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DDoS-RSTFINFlood:         {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DDoS-SynonymousIP_Flood:  {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DDoS-ACK_Fragmentation:   {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DDoS-ICMP_Fragmentation:  {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DDoS-UDP_Fragmentation:   {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DDoS-SlowLoris:           {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DoS-UDP_Flood:            {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DoS-TCP_Flood:            {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DoS-SYN_Flood:            {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DoS-HTTP_Flood:           {paper_name: null, paper_category: null, status: no_paper_mapping}
+  Mirai-greeth_flood:       {paper_name: null, paper_category: null, status: no_paper_mapping}
+  Mirai-greip_flood:        {paper_name: null, paper_category: null, status: no_paper_mapping}
+  Mirai-udpplain:           {paper_name: null, paper_category: null, status: no_paper_mapping}
+  DNS_Spoofing:             {paper_name: null, paper_category: null, status: no_paper_mapping}
+  Recon-HostDiscovery:      {paper_name: null, paper_category: null, status: no_paper_mapping}
+  Recon-PingSweep:          {paper_name: null, paper_category: null, status: no_paper_mapping}
+  CommandInjection:         {paper_name: null, paper_category: null, status: no_paper_mapping}
+  BrowserHijacking:         {paper_name: null, paper_category: null, status: no_paper_mapping}

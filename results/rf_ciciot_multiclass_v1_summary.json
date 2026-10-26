@@ -1,0 +1,239 @@
+{
+  "data": "data/processed/sample_ciciot_v1.parquet",
+  "seed": 42,
+  "tag": "v1",
+  "class_weight": "none",
+  "rows_before_dedupe": 550132,
+  "duplicates_removed_before_split": 6636,
+  "duplicates_removed_per_class": {
+    "BenignTraffic": 3143,
+    "DNS_Spoofing": 456,
+    "Recon-HostDiscovery": 397,
+    "Recon-OSScan": 292,
+    "DDoS-ACK_Fragmentation": 279,
+    "DDoS-UDP_Fragmentation": 271,
+    "MITM-ArpSpoofing": 265,
+    "Recon-PortScan": 241,
+    "DoS-HTTP_Flood": 220,
+    "DDoS-ICMP_Fragmentation": 214,
+    "VulnerabilityScan": 107,
+    "Mirai-greip_flood": 96,
+    "Mirai-udpplain": 88,
+    "Mirai-greeth_flood": 83,
+    "DDoS-HTTP_Flood": 80,
+    "DDoS-SlowLoris": 66,
+    "DictionaryBruteForce": 53,
+    "DoS-SYN_Flood": 36,
+    "DDoS-SynonymousIP_Flood": 32,
+    "DoS-UDP_Flood": 28,
+    "DoS-TCP_Flood": 27,
+    "DDoS-RSTFINFlood": 25,
+    "DDoS-TCP_Flood": 21,
+    "DDoS-ICMP_Flood": 21,
+    "BrowserHijacking": 19,
+    "DDoS-PSHACK_Flood": 19,
+    "CommandInjection": 11,
+    "SqlInjection": 10,
+    "DDoS-UDP_Flood": 10,
+    "DDoS-SYN_Flood": 9,
+    "XSS": 8,
+    "Backdoor_Malware": 4,
+    "Recon-PingSweep": 4,
+    "Uploading_Attack": 1
+  },
+  "rows_after_dedupe": 543496,
+  "n_train": 434796,
+  "n_test": 108700,
+  "n_features": 43,
+  "features": [
+    "flow_duration",
+    "Header_Length",
+    "Protocol Type",
+    "Duration",
+    "Rate",
+    "Srate",
+    "Drate",
+    "fin_flag_number",
+    "syn_flag_number",
+    "rst_flag_number",
+    "psh_flag_number",
+    "ack_flag_number",
+    "ece_flag_number",
+    "cwr_flag_number",
+    "ack_count",
+    "syn_count",
+    "fin_count",
+    "urg_count",
+    "rst_count",
+    "HTTP",
+    "HTTPS",
+    "DNS",
+    "SMTP",
+    "SSH",
+    "TCP",
+    "UDP",
+    "ARP",
+    "ICMP",
+    "IPv",
+    "LLC",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Std",
+    "Tot size",
+    "IAT",
+    "Number",
+    "Magnitue",
+    "Radius",
+    "Covariance",
+    "Variance",
+    "Weight"
+  ],
+  "excluded_constant_in_sample": [
+    "DHCP",
+    "IRC",
+    "Telnet"
+  ],
+  "normal_label": "BenignTraffic",
+  "labels": [
+    "Backdoor_Malware",
+    "BenignTraffic",
+    "BrowserHijacking",
+    "CommandInjection",
+    "DDoS-ACK_Fragmentation",
+    "DDoS-HTTP_Flood",
+    "DDoS-ICMP_Flood",
+    "DDoS-ICMP_Fragmentation",
+    "DDoS-PSHACK_Flood",
+    "DDoS-RSTFINFlood",
+    "DDoS-SYN_Flood",
+    "DDoS-SlowLoris",
+    "DDoS-SynonymousIP_Flood",
+    "DDoS-TCP_Flood",
+    "DDoS-UDP_Flood",
+    "DDoS-UDP_Fragmentation",
+    "DNS_Spoofing",
+    "DictionaryBruteForce",
+    "DoS-HTTP_Flood",
+    "DoS-SYN_Flood",
+    "DoS-TCP_Flood",
+    "DoS-UDP_Flood",
+    "MITM-ArpSpoofing",
+    "Mirai-greeth_flood",
+    "Mirai-greip_flood",
+    "Mirai-udpplain",
+    "Recon-HostDiscovery",
+    "Recon-OSScan",
+    "Recon-PingSweep",
+    "Recon-PortScan",
+    "SqlInjection",
+    "Uploading_Attack",
+    "VulnerabilityScan",
+    "XSS"
+  ],
+  "model_params": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 100,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "train_seconds": 204.07,
+  "multiclass": {
+    "accuracy": 0.955639374425023,
+    "macro_precision": 0.8927882148342117,
+    "macro_recall": 0.7653086262338353,
+    "macro_f1": 0.7926537159106607,
+    "weighted_f1": 0.9524476651777721
+  },
+  "binary_derived": {
+    "accuracy": 0.9727138914443422,
+    "precision": 0.9969855330294157,
+    "recall": 0.9673703264166097,
+    "f1": 0.9819546859409604,
+    "confusion_matrix_[[TN,FP],[FN,TP]]": [
+      [
+        25035,
+        244
+      ],
+      [
+        2722,
+        80699
+      ]
+    ]
+  },
+  "train_test_overlap": {
+    "test_rows_with_feature_vector_seen_in_train": 0,
+    "fraction_of_test": 0.0,
+    "accuracy_on_seen_rows": null,
+    "accuracy_on_unseen_rows": 0.955639374425023
+  },
+  "top_confusions": [
+    [
+      "DNS_Spoofing",
+      "BenignTraffic",
+      713
+    ],
+    [
+      "Recon-OSScan",
+      "BenignTraffic",
+      667
+    ],
+    [
+      "MITM-ArpSpoofing",
+      "BenignTraffic",
+      531
+    ],
+    [
+      "Recon-PortScan",
+      "BenignTraffic",
+      323
+    ],
+    [
+      "Recon-HostDiscovery",
+      "BenignTraffic",
+      256
+    ],
+    [
+      "Recon-OSScan",
+      "Recon-PortScan",
+      175
+    ],
+    [
+      "MITM-ArpSpoofing",
+      "DNS_Spoofing",
+      151
+    ],
+    [
+      "DNS_Spoofing",
+      "Recon-HostDiscovery",
+      130
+    ],
+    [
+      "Recon-PortScan",
+      "Recon-OSScan",
+      119
+    ],
+    [
+      "DNS_Spoofing",
+      "MITM-ArpSpoofing",
+      115
+    ]
+  ],
+  "notes": "Trained on a class-capped sample of the CICIoT2023 train file, not the full dataset. Numeric features only. Exact duplicates removed before a random stratified split. Near-duplicate feature vectors may still appear in both train and test. Results do not represent full-dataset performance."
+}

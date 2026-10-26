@@ -240,3 +240,7 @@ data/*.parquet
 
 data/processed/
 models/
+data/raw/
+data/processed/
+models/
+.venv/
